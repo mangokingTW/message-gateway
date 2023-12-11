@@ -18,6 +18,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    navigator.serviceWorker.register("./firebase-messaging-sw.js")
     this.firebaseApp = initializeApp(firebaseConfig);
     this.requestPermission();
     this.listen();
